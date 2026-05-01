@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Евгения Смертина — Junior Frontend Developer</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+<header class="header" id="header">
+  <div class="container nav">
+    <a href="#home" class="logo">EVGENIA<span>.</span></a>
+
+    <nav class="nav__menu" id="nav-menu">
+      <a href="#home">Главная</a>
+      <a href="#about">Обо мне</a>
+      <a href="#experience">Опыт</a>
+      <a href="#projects">Проекты</a>
+      <a href="#skills">Навыки</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+
+    <a href="#contact" class="nav__btn">
+      Связаться <i class="fa-brands fa-telegram"></i>
+    </a>
+
+    <button class="nav__toggle" id="nav-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero__grid"></div>
+  <div class="hero__glow hero__glow--blue"></div>
+  <div class="hero__glow hero__glow--violet"></div>
+
+  <div class="container hero__container">
+    <div class="hero__content">
+      <div class="hero__badge">
+        <i class="fa-solid fa-code"></i>
+        Junior Frontend Developer
+      </div>
+
+      <h1 class="hero__title">
+        Создаю <span>аккуратные</span><br />
+        веб-интерфейсы
+      </h1>
+
+      <p class="hero__text">
+        Развиваюсь в HTML, CSS, JavaScript и React. Имею опыт работы с контентом,
+        вёрсткой и контролем качества. Использую современные инструменты разработки
+        и активно углубляю знания.
+      </p>
+
+      <div class="hero__buttons">
+        <a href="#projects" class="btn btn--primary">
+          Смотреть проекты <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="#contact" class="btn btn--outline">
+          <i class="fa-brands fa-telegram"></i> Связаться со мной
+        </a>
+      </div>
+
+      <div class="hero__tech">
+        <p>Технологии</p>
+
+        <div class="hero__tech-list">
+          <span><i class="fa-brands fa-html5"></i> HTML</span>
+          <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
+          <span><i class="fa-brands fa-js"></i> JavaScript</span>
+          <span><i class="fa-brands fa-react"></i> React</span>
+          <span><i class="fa-brands fa-git-alt"></i> Git</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__circle"></div>
+      <div class="hero__dots"></div>
+
+      <div class="code-window">
+        <div class="window-dots">
+          <span></span><span></span><span></span>
+        </div>
+
+<pre><code>const Developer = {
+  name: 'Evgenia',
+  role: 'Frontend Developer',
+  skills: ['HTML', 'CSS',
+           'JavaScript', 'React'],
+  focus: 'clean interfaces',
+  goal: 'grow in frontend'
+}</code></pre>
+      </div>
+
+      <div class="quality-card">
+        <div class="quality-card__icon">
+          <i class="fa-solid fa-user-check"></i>
+        </div>
+
+        <div>
+          <h4>Внимание к деталям</h4>
+          <p>Качественный результат</p>
+          <div class="quality-card__bar"><span></span></div>
+        </div>
+      </div>
+
+      <div class="floating-code">
+        <i class="fa-solid fa-code"></i>
+      </div>
+
+      <div class="floating-bracket">
+        <i class="fa-solid fa-terminal"></i>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-down">
+    <i class="fa-solid fa-arrow-down"></i>
+  </a>
+</section>
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__subtitle">Кто я</span>
+      <h2 class="section__title">Обо <span>мне</span></h2>
+      <p>
+        Я начинающий frontend-разработчик. Ищу junior-позицию, стажировку или проектную работу,
+        где смогу развиваться, делать понятные интерфейсы и быть полезной команде.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      <article class="info-card">
+        <div class="info-card__icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3>Frontend</h3>
+        <p>Изучаю HTML, CSS, JavaScript, React и применяю знания в реальных проектах.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="info-card__icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Контент и структура</h3>
+        <p>Есть опыт загрузки материалов, оформления страниц и работы с информацией.</p>
+      </article>
+
+      <article class="info-card">
+        <div class="info-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Качество</h3>
+        <p>Опыт контроля качества помогает внимательно относиться к деталям и логике интерфейса.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="experience section" id="experience">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__subtitle">Профессиональный путь</span>
+      <h2 class="section__title">Опыт <span>работы</span></h2>
+    </div>
+
+    <div class="experience__grid">
+      <article class="experience-card">
+        <div class="experience-card__top">
+          <div class="experience-card__icon"><i class="fa-solid fa-building-columns"></i></div>
+          <span>2025 — сейчас</span>
+        </div>
+        <h3>ТГУ</h3>
+        <h4>Загрузчик контента</h4>
+        <p>Загрузка материалов, оформление страниц, работа с контентом и базовой вёрсткой.</p>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-card__top">
+          <div class="experience-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <span>2019 — сейчас</span>
+        </div>
+        <h3>Palex</h3>
+        <h4>Специалист по контролю качества</h4>
+        <p>Работа с документацией, проверка качества, внимательность к деталям.</p>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-card__top">
+          <div class="experience-card__icon"><i class="fa-solid fa-comments"></i></div>
+          <span>2021 — сейчас</span>
+        </div>
+        <h3>Частная практика</h3>
+        <h4>Психолог</h4>
+        <p>Опыт коммуникации, понимание потребностей людей и работы с запросами клиентов.</p>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-card__top">
+          <div class="experience-card__icon"><i class="fa-solid fa-volleyball"></i></div>
+          <span>20 лет</span>
+        </div>
+        <h3>Волейбол</h3>
+        <h4>Капитан команды</h4>
+        <p>Дисциплина, командная работа, ответственность и устойчивость к нагрузке.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="projects section" id="projects">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__subtitle">Портфолио</span>
+      <h2 class="section__title">Мои <span>проекты</span></h2>
+    </div>
+
+    <div class="projects__grid">
+      <article class="project-card">
+        <div class="project-card__image">
+          <img src="images/orion.png" alt="Orion project" />
+        </div>
+        <div class="project-card__content">
+          <h3>Orion Mission</h3>
+          <p>Интерактивный образовательный проект по астрономии с визуальными модулями.</p>
+          <div class="tags">
+            <span>React</span><span>CSS</span><span>UI</span>
+          </div>
+          <a href="https://orionmission.ru" target="_blank">Открыть проект</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__image">
+          <img src="images/app.png" alt="APP Tomsk project" />
+        </div>
+        <div class="project-card__content">
+          <h3>Ассоциация практикующих психологов</h3>
+          <p>Сайт профессионального сообщества психологов с информационной структурой.</p>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>Контент</span>
+          </div>
+          <a href="https://app-tomsk.ru" target="_blank">Открыть проект</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="skills section" id="skills">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__subtitle">Компетенции</span>
+      <h2 class="section__title">Мои <span>навыки</span></h2>
+    </div>
+
+    <div class="skills__grid">
+      <article class="skill-card">
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JavaScript, React</p>
+      </article>
+
+      <article class="skill-card">
+        <h3>Инструменты</h3>
+        <p>Git, GitHub, VS Code, современные инструменты разработки</p>
+      </article>
+
+      <article class="skill-card">
+        <h3>Soft Skills</h3>
+        <p>Ответственность, внимательность, обучаемость, командная работа</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="section__header">
+      <span class="section__subtitle">Связь</span>
+      <h2 class="section__title">Контакты</h2>
+    </div>
+
+    <div class="contact__box">
+      <a href="mailto:evsmertina@yandex.ru"><i class="fa-solid fa-envelope"></i> evsmertina@yandex.ru</a>
+      <a href="https://t.me/smertina_jeckie" target="_blank"><i class="fa-brands fa-telegram"></i> @smertina_jeckie</a>
+      <a href="https://github.com/JackieSmertina" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Evgenia Smertina. Junior Frontend Developer.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
