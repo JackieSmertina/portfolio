@@ -220,36 +220,47 @@
       <h2 class="section__title">Мои <span>проекты</span></h2>
     </div>
 
-    <div class="projects__grid">
-      <article class="project-card">
-        <div class="project-card__image">
-          <img src="images/orion.png" alt="Orion project" />
-        </div>
-        <div class="project-card__content">
-          <h3>Orion Mission</h3>
-          <p>Интерактивный образовательный проект по астрономии с визуальными модулями.</p>
-          <div class="tags">
-            <span>React</span><span>CSS</span><span>UI</span>
-          </div>
-          <a href="https://orionmission.ru" target="_blank">Открыть проект</a>
-        </div>
-      </article>
+<div class="project-filter">
+  <button class="filter-btn active" data-filter="all">Все</button>
+  <button class="filter-btn" data-filter="react">React</button>
+  <button class="filter-btn" data-filter="html">HTML/CSS</button>
+</div>
+<div class="projects__grid">
 
-      <article class="project-card">
-        <div class="project-card__image">
-          <img src="images/app.png" alt="APP Tomsk project" />
-        </div>
-        <div class="project-card__content">
-          <h3>Ассоциация практикующих психологов</h3>
-          <p>Сайт профессионального сообщества психологов с информационной структурой.</p>
-          <div class="tags">
-            <span>HTML</span><span>CSS</span><span>Контент</span>
-          </div>
-          <a href="https://app-tomsk.ru" target="_blank">Открыть проект</a>
-        </div>
-      </article>
+  
+  <article class="project-card" data-category="react">
+    <div class="project-card__image">
+      <img src="images/orion.png" alt="Orion project" />
     </div>
-  </div>
+    <div class="project-card__content">
+      <h3>Orion Mission</h3>
+      <p>Интерактивный образовательный проект по астрономии с визуальными модулями.</p>
+      <div class="tags">
+        <span>React</span>
+        <span>CSS</span>
+        <span>UI</span>
+      </div>
+      <a href="https://orionmission.ru/" class="project-link">Открыть проект</a>
+    </div>
+  </article>
+
+  
+  <article class="project-card" data-category="html">
+    <div class="project-card__image">
+      <img src="images/app.png" alt="APP Tomsk project" />
+    </div>
+    <div class="project-card__content">
+      <h3>Ассоциация практикующих психологов</h3>
+      <p>Сайт профессионального сообщества психологов с информационной структурой.</p>
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Контент</span>
+      </div>
+      <a href="https://app-tomsk.ru/" class="project-link">Открыть проект</a>
+  </article>
+</div>
+</div>
 </section>
 
 <section class="skills section" id="skills">
@@ -283,12 +294,46 @@
     <div class="section__header">
       <span class="section__subtitle">Связь</span>
       <h2 class="section__title">Контакты</h2>
+      <p>Открыта к junior-позициям, стажировкам и проектной работе.</p>
     </div>
 
-    <div class="contact__box">
-      <a href="mailto:evsmertina@yandex.ru"><i class="fa-solid fa-envelope"></i> evsmertina@yandex.ru</a>
-      <a href="https://t.me/smertina_jeckie" target="_blank"><i class="fa-brands fa-telegram"></i> @smertina_jeckie</a>
-      <a href="https://github.com/JackieSmertina" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    <div class="contact__grid">
+      <div class="contact__box">
+        <a href="mailto:evsmertina@yandex.ru">
+          <i class="fa-solid fa-envelope"></i> evsmertina@yandex.ru
+        </a>
+
+        <a href="https://t.me/smertina_jeckie" target="_blank">
+          <i class="fa-brands fa-telegram"></i> @smertina_jeckie
+        </a>
+
+        <a href="https://github.com/JackieSmertina" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Ваше имя">
+          <small></small>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" placeholder="Email">
+          <small></small>
+        </div>
+
+        <div class="form-group">
+          <textarea id="message" rows="5" placeholder="Сообщение"></textarea>
+          <small></small>
+        </div>
+
+        <button type="submit" class="btn btn--primary">
+          Отправить сообщение <i class="fa-solid fa-paper-plane"></i>
+        </button>
+
+        <p class="form-success" id="formSuccess">Сообщение успешно отправлено!</p>
+      </form>
     </div>
   </div>
 </section>
