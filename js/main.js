@@ -1,72 +1,107 @@
 document.addEventListener("DOMContentLoaded", () => {
-  initNavigation();
-  initHeaderScroll();
-  initRevealAnimation();
-  initActiveLinks();
+  initHeader();
+  initCardsAnimation();
+  initProjectFilter();
+  initContactForm();
 });
 
-function initNavigation() {
-  const navToggle = document.getElementById("nav-toggle");
-  const navClose = document.getElementById("nav-close");
-  const navMenu = document.getElementById("nav-menu");
-  const navLinks = document.querySelectorAll(".nav__link");
+function initHeader() {
+  const header = document.getElementById("header");
 
-  if (navToggle && navMenu) {
-    navToggle.addEventListener("click", () => navMenu.classList.add("show"));
-  }
-
-  if (navClose && navMenu) {
-    navClose.addEventListener("click", () => navMenu.classList.remove("show"));
-  }
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => navMenu?.classList.remove("show"));
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("header--scrolled", window.scrollY > 40);
   });
 }
 
-function initHeaderScroll() {
-  const header = document.getElementById("header");
+function initCardsAnimation() {
+  const animatedItems = document.querySelectorAll(
+    ".info-card, .experience-card, .project-card, .skill-card"
+  );
 
-  const updateHeader = () => {
-    if (!header) return;
-    header.classList.toggle("scrolled", window.scrollY > 40);
-  };
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-  updateHeader();
-  window.addEventListener("scroll", updateHeader);
+  animatedItems.forEach(item => observer.observe(item));
 }
 
-function initRevealAnimation() {
-  const elements = document.querySelectorAll(".reveal");
+function initProjectFilter() {
+  const buttons = document.querySelectorAll(".filter-btn");
+  const cards = document.querySelectorAll(".project-card");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
 
-  elements.forEach((el) => observer.observe(el));
-}
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
 
-function initActiveLinks() {
-  const sections = document.querySelectorAll("section[id]");
-  const links = document.querySelectorAll(".nav__link");
+      cards.forEach(card => {
+        const category = card.dataset.category;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      links.forEach((link) => {
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === `#${entry.target.id}`
-        );
+        if (filter === "all" || category === filter) {
+          card.classList.remove("hide");
+        } else {
+          card.classList.add("hide");
+        }
       });
     });
-  }, { rootMargin: "-45% 0px -50% 0px" });
+  });
+}
 
-  sections.forEach((section) => observer.observe(section));
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const success = document.getElementById("formSuccess");
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const fields = [
+      {
+        input: document.getElementById("name"),
+        validate: value => value.length >= 2,
+        message: "Введите имя минимум из 2 символов"
+      },
+      {
+        input: document.getElementById("email"),
+        validate: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+        message: "Введите корректный email"
+      },
+      {
+        input: document.getElementById("message"),
+        validate: value => value.length >= 10,
+        message: "Сообщение должно быть минимум 10 символов"
+      }
+    ];
+
+    let isValid = true;
+
+    fields.forEach(field => {
+      const value = field.input.value.trim();
+      const error = field.input.nextElementSibling;
+
+      if (!field.validate(value)) {
+        error.textContent = field.message;
+        isValid = false;
+      } else {
+        error.textContent = "";
+      }
+    });
+
+    if (isValid) {
+      form.reset();
+      success.classList.add("show");
+
+      setTimeout(() => {
+        success.classList.remove("show");
+      }, 3000);
+    }
+  });
 }
