@@ -511,7 +511,7 @@ img {
   line-height: 1.7;
 }
 
-/* ABOUT */
+
 
 .about__grid {
   display: grid;
@@ -605,21 +605,26 @@ img {
   line-height: 1.4;
 }
 
-/* PROJECTS */
+/* пректы */
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 34px;
+  align-items: stretch;
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  min-height: 100%;
 }
 
 .project-card__image {
   height: 270px;
-  background: rgba(59, 130, 246, 0.08);
+  width: 100%;
+  overflow: hidden;
 }
 
 .project-card__image img {
@@ -630,34 +635,17 @@ img {
 
 .project-card__content {
   padding: 34px;
-}
-
-.project-card h3 {
-  font-size: 26px;
-  margin-bottom: 16px;
-}
-
-.tags {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 22px 0;
+  flex-direction: column;
+  flex: 1;
 }
 
-.tags span {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(59, 130, 246, 0.14);
-  border: 1px solid rgba(59, 130, 246, 0.26);
-  color: #8fb5ff;
-  font-size: 13px;
-  font-weight: 800;
+.project-card__content p {
+  margin-bottom: 20px;
 }
 
-.project-card a {
-  display: inline-flex;
-  color: var(--blue);
-  font-weight: 900;
+.project-card__content a {
+  margin-top: auto;
 }
 
 /* скилы */
@@ -804,4 +792,184 @@ img {
   .scroll-down {
     display: none;
   }
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.contact-form {
+  padding: 34px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--stroke);
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(59, 130, 246, 0.26);
+  background: rgba(6, 13, 26, 0.72);
+  color: white;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.form-group small {
+  display: block;
+  min-height: 18px;
+  margin-top: 7px;
+  color: #fb7185;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-success {
+  display: none;
+  margin-top: 18px;
+  color: #22c55e;
+  font-weight: 800;
+}
+
+.form-success.show {
+  display: block;
+}
+
+.project-filter {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.filter-btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  background: rgba(13, 24, 49, 0.82);
+  color: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--gradient);
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card.hide {
+  display: none;
+}
+
+
+
+
+.projects {
+  padding-bottom: 140px;
+}
+
+.skills {
+  padding-top: 140px;
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.26);
+  color: #8fb5ff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.info-card,
+.experience-card,
+.skill-card {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.info-card.show,
+.experience-card.show,
+.skill-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card {
+  opacity: 1;
+  transform: none;
+}
+
+.project-card.show {
+  opacity: 1;
+  transform: none;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  font-weight: 800;
+  color: #5f82ff;
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  color: #9db8ff;
+  transform: translateX(4px);
+}
+
+
+.section + .section {
+  margin-top: 60px;
+}
+
+.section + .section::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 60px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.25),
+    transparent
+  );
 }
