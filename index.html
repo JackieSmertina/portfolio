@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Евгения Смертина — Junior Frontend Developer</title>
 
+  <!-- AOS — библиотека анимаций при скролле -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -35,8 +37,14 @@
   </div>
 </header>
 
+<!-- Кнопка закрытия мобильного меню -->
+<button class="nav__close" id="nav-close">
+  <i class="fa-solid fa-xmark"></i>
+</button>
+
 <main>
 
+<!-- ======== HERO ======== -->
 <section class="hero" id="home">
   <div class="hero__grid"></div>
   <div class="hero__glow hero__glow--blue"></div>
@@ -64,7 +72,6 @@
         <a href="#projects" class="btn btn--primary">
           Смотреть проекты <i class="fa-solid fa-arrow-right"></i>
         </a>
-
         <a href="#contact" class="btn btn--outline">
           <i class="fa-brands fa-telegram"></i> Связаться со мной
         </a>
@@ -72,7 +79,6 @@
 
       <div class="hero__tech">
         <p>Технологии</p>
-
         <div class="hero__tech-list">
           <span><i class="fa-brands fa-html5"></i> HTML</span>
           <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
@@ -91,7 +97,6 @@
         <div class="window-dots">
           <span></span><span></span><span></span>
         </div>
-
 <pre><code>const Developer = {
   name: 'Evgenia',
   role: 'Frontend Developer',
@@ -106,7 +111,6 @@
         <div class="quality-card__icon">
           <i class="fa-solid fa-user-check"></i>
         </div>
-
         <div>
           <h4>Внимание к деталям</h4>
           <p>Качественный результат</p>
@@ -129,9 +133,10 @@
   </a>
 </section>
 
+<!-- ======== ABOUT ======== -->
 <section class="about section" id="about">
   <div class="container">
-    <div class="section__header">
+    <div class="section__header" data-aos="fade-up">
       <span class="section__subtitle">Кто я</span>
       <h2 class="section__title">Обо <span>мне</span></h2>
       <p>
@@ -141,19 +146,19 @@
     </div>
 
     <div class="about__grid">
-      <article class="info-card">
+      <article class="info-card" data-aos="fade-up" data-aos-delay="0">
         <div class="info-card__icon"><i class="fa-solid fa-laptop-code"></i></div>
         <h3>Frontend</h3>
         <p>Изучаю HTML, CSS, JavaScript, React и применяю знания в реальных проектах.</p>
       </article>
 
-      <article class="info-card">
+      <article class="info-card" data-aos="fade-up" data-aos-delay="100">
         <div class="info-card__icon"><i class="fa-solid fa-layer-group"></i></div>
         <h3>Контент и структура</h3>
         <p>Есть опыт загрузки материалов, оформления страниц и работы с информацией.</p>
       </article>
 
-      <article class="info-card">
+      <article class="info-card" data-aos="fade-up" data-aos-delay="200">
         <div class="info-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>Качество</h3>
         <p>Опыт контроля качества помогает внимательно относиться к деталям и логике интерфейса.</p>
@@ -162,15 +167,16 @@
   </div>
 </section>
 
+<!-- ======== EXPERIENCE ======== -->
 <section class="experience section" id="experience">
   <div class="container">
-    <div class="section__header">
+    <div class="section__header" data-aos="fade-up">
       <span class="section__subtitle">Профессиональный путь</span>
       <h2 class="section__title">Опыт <span>работы</span></h2>
     </div>
 
     <div class="experience__grid">
-      <article class="experience-card">
+      <article class="experience-card" data-aos="fade-up" data-aos-delay="0">
         <div class="experience-card__top">
           <div class="experience-card__icon"><i class="fa-solid fa-building-columns"></i></div>
           <span>2025 — сейчас</span>
@@ -180,7 +186,7 @@
         <p>Загрузка материалов, оформление страниц, работа с контентом и базовой вёрсткой.</p>
       </article>
 
-      <article class="experience-card">
+      <article class="experience-card" data-aos="fade-up" data-aos-delay="100">
         <div class="experience-card__top">
           <div class="experience-card__icon"><i class="fa-solid fa-shield-halved"></i></div>
           <span>2019 — сейчас</span>
@@ -190,7 +196,7 @@
         <p>Работа с документацией, проверка качества, внимательность к деталям.</p>
       </article>
 
-      <article class="experience-card">
+      <article class="experience-card" data-aos="fade-up" data-aos-delay="200">
         <div class="experience-card__top">
           <div class="experience-card__icon"><i class="fa-solid fa-comments"></i></div>
           <span>2021 — сейчас</span>
@@ -200,7 +206,7 @@
         <p>Опыт коммуникации, понимание потребностей людей и работы с запросами клиентов.</p>
       </article>
 
-      <article class="experience-card">
+      <article class="experience-card" data-aos="fade-up" data-aos-delay="300">
         <div class="experience-card__top">
           <div class="experience-card__icon"><i class="fa-solid fa-volleyball"></i></div>
           <span>20 лет</span>
@@ -213,75 +219,76 @@
   </div>
 </section>
 
+<!-- ======== PROJECTS ======== -->
 <section class="projects section" id="projects">
   <div class="container">
-    <div class="section__header">
+    <div class="section__header" data-aos="fade-up">
       <span class="section__subtitle">Портфолио</span>
       <h2 class="section__title">Мои <span>проекты</span></h2>
     </div>
 
-<div class="project-filter">
-  <button class="filter-btn active" data-filter="all">Все</button>
-  <button class="filter-btn" data-filter="react">React</button>
-  <button class="filter-btn" data-filter="html">HTML/CSS</button>
-</div>
-<div class="projects__grid">
+    <div class="project-filter" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">Все</button>
+      <button class="filter-btn" data-filter="react">React</button>
+      <button class="filter-btn" data-filter="html">HTML/CSS</button>
+    </div>
 
-  
-  <article class="project-card" data-category="react">
-    <div class="project-card__image">
-      <img src="images/orion.png" alt="Orion project" />
-    </div>
-    <div class="project-card__content">
-      <h3>Orion Mission</h3>
-      <p>Интерактивный образовательный проект по астрономии с визуальными модулями.</p>
-      <div class="tags">
-        <span>React</span>
-        <span>CSS</span>
-        <span>UI</span>
-      </div>
-      <a href="https://orionmission.ru/" class="project-link">Открыть проект</a>
-    </div>
-  </article>
+    <div class="projects__grid">
+      <article class="project-card" data-category="react" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-card__image">
+          <img src="images/orion.png" alt="Orion project" />
+        </div>
+        <div class="project-card__content">
+          <h3>Orion Mission</h3>
+          <p>Интерактивный образовательный проект по астрономии с визуальными модулями.</p>
+          <div class="tags">
+            <span>React</span>
+            <span>CSS</span>
+            <span>UI</span>
+          </div>
+          <a href="https://orionmission.ru/" class="project-link">Открыть проект</a>
+        </div>
+      </article>
 
-  
-  <article class="project-card" data-category="html">
-    <div class="project-card__image">
-      <img src="images/app.png" alt="APP Tomsk project" />
+      <article class="project-card" data-category="html" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card__image">
+          <img src="images/app.png" alt="APP Tomsk project" />
+        </div>
+        <div class="project-card__content">
+          <h3>Ассоциация практикующих психологов</h3>
+          <p>Сайт профессионального сообщества психологов с информационной структурой.</p>
+          <div class="tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Контент</span>
+          </div>
+          <a href="https://app-tomsk.ru/" class="project-link">Открыть проект</a>
+        </div>
+      </article>
     </div>
-    <div class="project-card__content">
-      <h3>Ассоциация практикующих психологов</h3>
-      <p>Сайт профессионального сообщества психологов с информационной структурой.</p>
-      <div class="tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Контент</span>
-      </div>
-      <a href="https://app-tomsk.ru/" class="project-link">Открыть проект</a>
-  </article>
-</div>
-</div>
+  </div>
 </section>
 
+<!-- ======== SKILLS ======== -->
 <section class="skills section" id="skills">
   <div class="container">
-    <div class="section__header">
+    <div class="section__header" data-aos="fade-up">
       <span class="section__subtitle">Компетенции</span>
       <h2 class="section__title">Мои <span>навыки</span></h2>
     </div>
 
     <div class="skills__grid">
-      <article class="skill-card">
+      <article class="skill-card" data-aos="fade-up" data-aos-delay="0">
         <h3>Frontend</h3>
         <p>HTML, CSS, JavaScript, React</p>
       </article>
 
-      <article class="skill-card">
+      <article class="skill-card" data-aos="fade-up" data-aos-delay="100">
         <h3>Инструменты</h3>
         <p>Git, GitHub, VS Code, современные инструменты разработки</p>
       </article>
 
-      <article class="skill-card">
+      <article class="skill-card" data-aos="fade-up" data-aos-delay="200">
         <h3>Soft Skills</h3>
         <p>Ответственность, внимательность, обучаемость, командная работа</p>
       </article>
@@ -289,42 +296,41 @@
   </div>
 </section>
 
+<!-- ======== CONTACT ======== -->
 <section class="contact section" id="contact">
   <div class="container">
-    <div class="section__header">
+    <div class="section__header" data-aos="fade-up">
       <span class="section__subtitle">Связь</span>
       <h2 class="section__title">Контакты</h2>
       <p>Открыта к junior-позициям, стажировкам и проектной работе.</p>
     </div>
 
     <div class="contact__grid">
-      <div class="contact__box">
+      <div class="contact__box" data-aos="fade-right">
         <a href="mailto:evsmertina@yandex.ru">
           <i class="fa-solid fa-envelope"></i> evsmertina@yandex.ru
         </a>
-
         <a href="https://t.me/smertina_jeckie" target="_blank">
           <i class="fa-brands fa-telegram"></i> @smertina_jeckie
         </a>
-
         <a href="https://github.com/JackieSmertina" target="_blank">
           <i class="fa-brands fa-github"></i> GitHub
         </a>
       </div>
 
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" data-aos="fade-left" novalidate>
         <div class="form-group">
-          <input type="text" id="name" placeholder="Ваше имя">
+          <input type="text" id="name" name="name" placeholder="Ваше имя" required>
           <small></small>
         </div>
 
         <div class="form-group">
-          <input type="email" id="email" placeholder="Email">
+          <input type="email" id="email" name="email" placeholder="Email" required>
           <small></small>
         </div>
 
         <div class="form-group">
-          <textarea id="message" rows="5" placeholder="Сообщение"></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Сообщение" required></textarea>
           <small></small>
         </div>
 
@@ -342,10 +348,12 @@
 
 <footer class="footer">
   <div class="container">
-    <p>© 2026 Evgenia Smertina. Junior Frontend Developer.</p>
+    <p>&copy; 2025 Evgenia Smertina. Junior Frontend Developer.</p>
   </div>
 </footer>
 
+<!-- AOS — библиотека анимаций -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
