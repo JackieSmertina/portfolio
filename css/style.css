@@ -527,7 +527,8 @@ img {
   background: var(--card);
   border: 1px solid var(--stroke);
   box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-  transition: 0.3s;
+  /* только hover-свойства — AOS управляет opacity и transform при скролле */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .info-card {
@@ -917,25 +918,11 @@ img {
 }
 
 
-.info-card,
-.experience-card,
-.skill-card {
-  opacity: 0;
-  transform: translateY(28px);
-}
-
+/* Анимации при скролле теперь управляются библиотекой AOS через data-aos атрибуты */
+/* Старые классы .show оставлены для обратной совместимости */
 .info-card.show,
 .experience-card.show,
-.skill-card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card {
-  opacity: 1;
-  transform: none;
-}
-
+.skill-card.show,
 .project-card.show {
   opacity: 1;
   transform: none;
@@ -972,4 +959,97 @@ img {
     rgba(59, 130, 246, 0.25),
     transparent
   );
+}
+
+/* ── Мобильное меню ─────────────────────────────────────── */
+.nav__close {
+  display: none;
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1100;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 12px;
+  background: rgba(4, 10, 23, 0.9);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__menu.mobile-open {
+  display: flex !important;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 23, 0.97);
+  backdrop-filter: blur(18px);
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  z-index: 1050;
+}
+
+.nav__menu.mobile-open a {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.nav__menu.mobile-open ~ .nav__close,
+body:has(.nav__menu.mobile-open) .nav__close {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .nav__close {
+    display: none; /* показывается только когда меню открыто */
+  }
+}
+
+/* ── Мобильное меню ────────────────────────────────────── */
+.nav__close {
+  display: none;
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  z-index: 1100;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 12px;
+  background: rgba(4, 10, 23, 0.95);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__menu.mobile-open {
+  display: flex !important;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 23, 0.97);
+  backdrop-filter: blur(18px);
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  z-index: 1050;
+}
+
+.nav__menu.mobile-open a {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.nav__menu.mobile-open ~ .nav__close {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .nav__close { display: none; }
 }
